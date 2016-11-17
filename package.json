@@ -1,8 +1,7 @@
 {
   "name": "subnetcal",
-  "homepage": "http://subnetcalculator.github.io/subnetcalculator",
+  "homepage": "http://byoungdale.github.io/subnetcalculator",
   "version": "0.1.0",
-  "private": true,
   "devDependencies": {
     "gh-pages": "^0.12.0",
     "react-scripts": "0.7.0"
