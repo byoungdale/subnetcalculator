@@ -24,13 +24,15 @@
 }
 
 .custom-validation {
-  width: 500px;
+  max-width: 350px;
   margin: 0 auto;
 }
 
 body {
   font-family: "Helvetica Neue", Arial;
   font-weight: 200;
+  height: 150px;
+  padding: 20px;
 }
 
 h1, h2, h3 {

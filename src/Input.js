@@ -2,6 +2,19 @@ import React from 'react';
 import Formsy from 'formsy-react';
 var Netmask = require('netmask').Netmask
 
+class FinalResult extends React.Component {
+  render() {
+    return (
+      <div>
+        <Base ipaddress={this.props.ipaddress} />
+        <SubNetmask ipaddress={this.props.ipaddress} />
+        <BroadcastAddress ipaddress={this.props.ipaddress} />
+        <Range ipaddress={this.props.ipaddress} />
+      </div>
+    )
+  }
+}
+
 class SubNetmask extends React.Component {
   render() {
     var block = new Netmask(this.props.ipaddress);
@@ -89,10 +102,7 @@ const MyInput = React.createClass({
           checked={this.props.type === 'checkbox' && this.getValue() ? 'checked' : null}
         />
         <span className='validation-error'>{errorMessage}</span>
-        <Base ipaddress={this.getValue()} />
-        <SubNetmask ipaddress={this.getValue()} />
-        <BroadcastAddress ipaddress={this.getValue()} />
-        <Range ipaddress={this.getValue()} />
+        <FinalResult ipaddress={this.getValue()} />
       </div>
     );
   }
