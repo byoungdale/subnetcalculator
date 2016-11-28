@@ -11,10 +11,10 @@ class App extends Component {
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Subnet Calculator</h2>
+          <Formsy.Form onSubmit={this.DisplayInfo} className="custom-validation">
+            <MyInput name="ipaddress" title="IP Address" type="text" value="192.168.0.0/24"/>
+          </Formsy.Form>
         </div>
-        <Formsy.Form onSubmit={this.DisplayInfo} className="custom-validation">
-          <MyInput name="ipaddress" title="IP Address" type="text" value="192.168.0.0/24"/>
-        </Formsy.Form>
       </div>
     );
   }
