@@ -1,6 +1,9 @@
 import React from 'react';
 import Formsy from 'formsy-react';
-var Netmask = require('netmask').Netmask
+import Base from './CIDR.js';
+import SubNetmask from './Subnetmask.js';
+import BroadcastAddress from './BroadcastAddress.js';
+import Range from './Hostrange.js';
 
 class FinalResult extends React.Component {
   render() {
@@ -13,63 +16,6 @@ class FinalResult extends React.Component {
       </div>
     )
   }
-}
-
-class SubNetmask extends React.Component {
-  render() {
-    var block = new Netmask(this.props.ipaddress);
-    console.log("Subnet Mask is " + block.mask);
-    return <SubnetMask mask={block.mask}/>;
-  }
-}
-
-class Base extends React.Component {
-  render() {
-    var block = new Netmask(this.props.ipaddress);
-    console.log("CIDR bitmask is " + block.bitmask);
-    return <IPbase ipaddress={block.base} bitmask={block.bitmask}/>;
-  }
-}
-
-class BroadcastAddress extends React.Component {
-  render() {
-    var block = new Netmask(this.props.ipaddress);
-    console.log("Broadcast Address is" + block.broadcast);
-    return <BroadcastAddr broadcast={block.broadcast} />
-  }
-}
-
-class Range extends React.Component {
-  render() {
-    var block = new Netmask(this.props.ipaddress);
-    console.log("IP address range is " + block.first + "-" + block.last);
-    return (
-      <div>
-        <IpRange first={block.first} last={block.last} />
-        <HostTotal total={block.size}/>
-      </div>
-    )
-  }
-}
-
-function SubnetMask(props) {
-  return <h3><b>Subnet Mask: </b>{props.mask}</h3>;
-}
-
-function IPbase(props) {
-  return <h3><b>IP Address: </b>{props.ipaddress} /{props.bitmask}</h3>;
-}
-
-function BroadcastAddr(props) {
-  return <h3><b>Broadcast Address: </b>{props.broadcast}</h3>;
-}
-
-function IpRange(props) {
-  return <h3><b>Host Range: </b>{props.first}-{props.last}</h3>;
-}
-
-function HostTotal(props) {
-  return <h3><b>Total Host Addresses:</b> {props.total}</h3>
 }
 
 const MyInput = React.createClass({
