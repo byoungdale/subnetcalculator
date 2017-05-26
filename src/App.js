@@ -13,11 +13,16 @@ class App extends Component {
           <h2>Subnet Calculator</h2>
         </div>
         <Formsy.Form onSubmit={this.DisplayInfo} className="custom-validation">
-          <MyInput name="ipaddress" title="IP Address" type="text" value="192.168.0.0/24"/>
+          <MyInput
+            name="ipaddress"
+            title="IP Address"
+            type="text"
+            value="192.168.0.0/24"
+            />
         </Formsy.Form>
       </div>
-    );
-  }
-}
+    ); // return
+  } // render()
+} // App
 
 export default App;
